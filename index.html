@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROOTed — A Siddhashrama x Udayini Experience</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--deep-brown:#2C1810;--terracotta:#C46B4A;--rose:#B5485A;--dusty-rose:#D4899A;--forest:#2D4A3E;--sage:#7A9E8E;--cream:#FDF8F4;--warm-white:#FAF3EE;--blush:#F2E0E4;--sand:#EDE0D4;--gold:#C4875A}
+body{background:var(--cream);color:var(--deep-brown);font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+.hero{min-height:100vh;background:linear-gradient(160deg,var(--deep-brown) 0%,#4A1E2A 50%,#2D1F35 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,rgba(180,72,90,0.2) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(196,107,74,0.15) 0%,transparent 60%)}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--dusty-rose),transparent)}
+.hero-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:52px;position:relative}
+.hero-question{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,6vw,72px);font-weight:300;font-style:italic;color:var(--cream);line-height:1.2;max-width:800px;margin-bottom:20px;position:relative}
+.hero-question em{color:var(--dusty-rose);font-style:normal}
+.hero-sub{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(212,137,154,0.6);margin-bottom:72px;position:relative}
+.hero-divider{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--dusty-rose),transparent);margin:0 auto 52px;position:relative}
+.brand-lockup{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,11vw,108px);font-weight:300;color:var(--cream);letter-spacing:20px;text-transform:uppercase;position:relative}
+.brand-sub{font-size:10px;letter-spacing:4px;color:var(--dusty-rose);text-transform:uppercase;margin-top:20px;position:relative}
+.story-wrap{background:var(--warm-white)}
+.story-section{padding:100px 40px;max-width:720px;margin:0 auto}
+.section-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:var(--terracotta);margin-bottom:36px}
+.story-hook{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4.5vw,52px);font-weight:300;line-height:1.2;color:var(--deep-brown);margin-bottom:56px}
+.story-hook span{color:var(--rose);font-style:italic}
+.story-body p{font-size:16px;line-height:1.95;color:#4A3530;margin-bottom:20px}
+.story-body em{font-style:italic;color:var(--deep-brown)}
+.hindi{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--terracotta);margin-bottom:2px!important}
+.hindi-trans{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-top:0!important;margin-bottom:32px!important}
+.question{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);font-weight:300;font-style:italic;line-height:1.5;color:var(--rose);border-left:2px solid var(--dusty-rose);padding-left:28px;margin:36px 0}
+.break{display:block;text-align:center;font-size:13px;letter-spacing:8px;color:var(--dusty-rose);margin:48px 0;opacity:0.5}
+.voices-section{background:var(--blush);padding:100px 40px}
+.voices-inner{max-width:720px;margin:0 auto}
+.voices-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,44px);font-weight:300;line-height:1.25;margin-bottom:56px;color:var(--deep-brown)}
+.voice-card{border-top:1px solid rgba(181,72,90,0.2);padding:44px 0}
+.voice-card:last-child{border-bottom:1px solid rgba(181,72,90,0.2)}
+.voice-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--terracotta);margin-bottom:8px}
+.voice-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,32px);font-weight:300;font-style:italic;color:var(--deep-brown);margin-bottom:16px;line-height:1.3}
+.voice-body{font-size:15px;line-height:1.9;color:#4A3530;margin-bottom:20px}
+.voice-question{font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2vw,22px);font-style:italic;color:var(--rose);line-height:1.5}
+.convergence{background:var(--warm-white);padding:100px 40px}
+.convergence-inner{max-width:720px;margin:0 auto}
+.convergence-body p{font-size:16px;line-height:1.95;color:#4A3530;margin-bottom:20px}
+.convergence-body em{font-style:italic;color:var(--deep-brown)}
+.convergence-body .hindi{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--terracotta);margin-bottom:2px!important}
+.convergence-body .hindi-trans{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--sage);margin-top:0!important;margin-bottom:32px!important}
+.convergence-body .question{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.5vw,26px);font-weight:300;font-style:italic;line-height:1.5;color:var(--rose);border-left:2px solid var(--dusty-rose);padding-left:28px;margin:36px 0}
+.convergence-body .break{display:block;text-align:center;font-size:13px;letter-spacing:8px;color:var(--dusty-rose);margin:48px 0;opacity:0.5}
+.truth{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3.5vw,40px);font-weight:300;line-height:1.35;color:var(--deep-brown);border-left:3px solid var(--rose);padding-left:32px;margin:52px 0}
+.truth em{color:var(--rose);font-style:italic}
+.interlude{background:var(--forest);color:var(--cream);text-align:center;padding:100px 40px;position:relative;overflow:hidden}
+.interlude::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(122,158,142,0.15) 0%,transparent 70%)}
+.interlude-text{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.5vw,52px);font-weight:300;font-style:italic;max-width:680px;margin:0 auto 28px;line-height:1.3;position:relative}
+.interlude-text em{color:var(--dusty-rose);font-style:normal}
+.interlude-sub{font-size:14px;color:rgba(253,248,244,0.55);max-width:460px;margin:0 auto;line-height:1.85;position:relative}
+.what-section{background:var(--sand);padding:100px 40px}
+.what-inner{max-width:720px;margin:0 auto}
+.what-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.5vw,50px);font-weight:300;line-height:1.25;margin-bottom:56px;color:var(--deep-brown)}
+.not-list{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-bottom:52px;background:rgba(44,24,16,0.08)}
+@media(max-width:620px){.not-list{grid-template-columns:1fr}}
+.not-item{background:var(--sand);padding:36px 28px}
+.not-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--rose);margin-bottom:14px}
+.not-item p{font-size:15px;line-height:1.75;color:var(--deep-brown)}
+.what-body{font-size:16px;color:#4A3530;line-height:1.95}
+.schedule-wrap{background:var(--warm-white)}
+.schedule-section{padding:100px 40px;max-width:720px;margin:0 auto}
+.schedule-item{display:grid;grid-template-columns:120px 1fr;gap:28px;padding:40px 0;border-bottom:1px solid rgba(196,107,74,0.15)}
+.schedule-item:last-child{border-bottom:none}
+.time{font-size:11px;letter-spacing:1px;color:var(--terracotta);padding-top:5px;line-height:1.6}
+.schedule-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--deep-brown);margin-bottom:10px}
+.schedule-desc{font-size:14px;color:#7A6055;line-height:1.8}
+.campaign{background:linear-gradient(150deg,#2C1810 0%,#4A1E2A 60%,#2D4A3E 100%);text-align:center;padding:120px 40px;position:relative;overflow:hidden}
+.campaign::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 40% 50%,rgba(180,72,90,0.25) 0%,transparent 60%)}
+.campaign-line{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,58px);font-weight:300;color:var(--cream);line-height:1.3;max-width:740px;margin:0 auto 48px;position:relative}
+.campaign-line em{color:var(--dusty-rose);font-style:italic}
+.campaign-divider{width:48px;height:1px;background:var(--dusty-rose);margin:0 auto 36px;position:relative}
+.campaign-hindi{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--dusty-rose);margin-bottom:10px;position:relative}
+.campaign-hindi-trans{font-size:10px;letter-spacing:3px;color:rgba(253,248,244,0.35);text-transform:uppercase;position:relative}
+.who-section{background:var(--blush);padding:100px 40px}
+.who-inner{max-width:720px;margin:0 auto}
+.who-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,44px);font-weight:300;line-height:1.3;margin-bottom:36px;color:var(--deep-brown)}
+.who-body{font-size:16px;color:#4A3530;line-height:1.95}
+.closing{padding:100px 40px;max-width:720px;margin:0 auto;text-align:center}
+.closing-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,5vw,56px);font-weight:300;font-style:italic;line-height:1.25;margin-bottom:44px;color:var(--deep-brown)}
+.closing p{font-size:16px;color:#7A6055;max-width:480px;margin:0 auto 16px;line-height:1.9}
+.closing-sign{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;color:var(--rose);margin-top:40px!important;line-height:1.6}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:72px 0 0;background:rgba(44,24,16,0.08)}
+@media(max-width:500px){.details-grid{grid-template-columns:1fr}}
+.detail-cell{background:var(--cream);padding:40px 28px;text-align:center}
+.detail-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--terracotta);margin-bottom:14px}
+.detail-value{font-family:'Cormorant Garamond',serif;font-size:23px;color:var(--deep-brown);line-height:1.4}
+footer{background:var(--deep-brown);text-align:center;padding:52px 40px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:36px;letter-spacing:12px;color:var(--dusty-rose);margin-bottom:18px}
+footer p{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(253,248,244,0.3)}
+@media print{*{page-break-inside:avoid!important}body{margin:0;padding:0}.hero,.story-wrap,.voices-section,.convergence,.interlude,.what-section,.schedule-wrap,.campaign,.who-section,.closing,footer{page-break-inside:avoid!important;page-break-after:avoid!important}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <p class="hero-eyebrow">March 8, 2026 &nbsp;·&nbsp; International Women's Day</p>
+  <h1 class="hero-question">When did you last do something<br><em>only for yourself?</em></h1>
+  <p class="hero-sub">If you had to think about it — this is for you</p>
+  <div class="hero-divider"></div>
+  <div class="brand-lockup">ROOTed</div>
+  <p class="brand-sub">A Siddhashrama &nbsp;×&nbsp; Udayini Experience</p>
+</div>
+
+<div class="story-wrap">
+<section class="story-section">
+  <p class="section-label">Her Morning</p>
+  <h2 class="story-hook">She wakes up before the world does.<br><span>For eleven minutes, it belongs to her.</span></h2>
+  <div class="story-body">
+    <p>Then it doesn't.</p>
+    <p class="hindi">Sab sambhalna.</p>
+    <p class="hindi-trans">Holding everything together.</p>
+    <p>Dabba. Doodhwala. Nanny instructions. Grocery list. School bag. Husband — maybe. She doesn't wait to find out. She leaves.</p>
+    <span class="break">· · ·</span>
+    <p>Or perhaps she wakes alone.</p>
+    <p>No dabba to pack. No school bag. A choice she made with full clarity, full intention — and has spent six years explaining to people who didn't ask but offered opinions anyway.</p>
+    <p>She leaves too.</p>
+    <span class="break">· · ·</span>
+    <p>Or perhaps she woke at 4 AM. Not by choice.</p>
+    <p>An appointment at 7. The kind she schedules before the office opens so nobody notices. Her body is in the middle of something enormous. Her calendar shows back-to-back meetings. She has learned to hold both.</p>
+    <p>She leaves.</p>
+    <span class="break">· · ·</span>
+    <p>Or perhaps she just came back.</p>
+    <p>Three months away. She returns to find her projects redistributed, her team subtly realigned, her chair — same chair, same desk — somehow no longer quite hers. The system sent a message while she was gone. She heard it.</p>
+    <p>She is back. She has to prove it.</p>
+    <span class="break">· · ·</span>
+    <p>They take different roads to the same building.</p>
+    <p>In the car — one thought, arriving in different words, wearing different faces, but underneath, exactly the same:</p>
+    <div class="question">Am I building a life — or just surviving one?</div>
+    <p>None of them answer. There isn't time.</p>
+  </div>
+</section>
+</div>
+
+<div class="voices-section">
+  <div class="voices-inner">
+    <p class="section-label">The Five of Her</p>
+    <h2 class="voices-headline">Different lives.<br>Different choices.<br>The same meeting room.</h2>
+
+    <div class="voice-card">
+      <p class="voice-label">She who chose herself first</p>
+      <p class="voice-title">Ambitious. Deliberate. Deliberately single.</p>
+      <p class="voice-body">She watched her peers get married and quietly get sidelined. So she made a different bet — on herself. She shows up fully, gives everything, is often the sharpest person in the room. And still gets told she is "too intense." "Not a culture fit." She softened once. It didn't help. She stopped softening. The system still hasn't made room for her.</p>
+      <p class="voice-question">"I gave up everything they said was holding other women back. Why am I still not enough?"</p>
+    </div>
+
+    <div class="voice-card">
+      <p class="voice-label">She who chose freedom</p>
+      <p class="voice-title">Consciously child-free. Completely clear.</p>
+      <p class="voice-body">A considered, unambiguous choice. Hers alone. And yet — she is handed the hardest projects because she "has no family commitments." Her boundaries are tested first. Her availability assumed. The radical self-knowledge that led to her choice is used as a resource by everyone else.</p>
+      <p class="voice-question">"I chose freedom. Why does it feel like I'm paying the price for everyone else's choices?"</p>
+    </div>
+
+    <div class="voice-card">
+      <p class="voice-label">She who is building a family</p>
+      <p class="voice-title">The invisible load. The second shift.</p>
+      <p class="voice-body">She loves her family and her work and is made to feel that wanting both is greedy. She is the emotional anchor of her team and the logistics coordinator of her household. Running two full-time jobs and evaluated on one. She was told she could have it all. Nobody mentioned she would have to do it all. Alone.</p>
+      <p class="voice-question">"I was told I could have it all. Nobody said I'd have to do it all — alone."</p>
+    </div>
+
+    <div class="voice-card">
+      <p class="voice-label">She who is trying to become a mother</p>
+      <p class="voice-title">The appointments nobody knows about.</p>
+      <p class="voice-body">Fertility treatments, IVF cycles, a hormonal rollercoaster happening in silence under a blazer in a boardroom. The leave she cannot ask for. The grief — sometimes — that she carries with no language for it at work. She performs at peak while her body is in the middle of something enormous. She smiles at 9 AM like nothing is happening.</p>
+      <p class="voice-question">"How long can I keep pretending that I'm fine?"</p>
+    </div>
+
+    <div class="voice-card">
+      <p class="voice-label">She who came back</p>
+      <p class="voice-title">Post-maternity. Rebuilding. Fiercer than before.</p>
+      <p class="voice-body">She returned to find her projects redistributed, her footing uncertain, her confidence — that thing she spent a decade building — somehow misplaced between the hospital and the office. She is rebuilding her visibility, her relationships, the version of herself that got tangled up with becoming a mother. She is more unsure than she lets on.</p>
+      <p class="voice-question">"I came back. Why does it feel like I have to prove I never left?"</p>
+    </div>
+  </div>
+</div>
+
+<div class="convergence">
+  <div class="convergence-inner">
+    <p class="section-label">Where They Meet</p>
+    <div class="convergence-body">
+      <p>By 9 AM, she — all of them — is already the most emotionally productive person in the building.</p>
+      <p>Team conflict. Junior in crisis. Peer who needs steadying. Three things handled before the laptop is fully open. None of it will appear in the appraisal.</p>
+      <p><em>Phir apna kaam.</em> Then — finally — her actual work.</p>
+      <span class="break">· · ·</span>
+      <p>The meeting. She speaks. Precise. Considered. True.</p>
+      <p>The room moves on.</p>
+      <p>A male colleague repeats her point twelve minutes later. The room nods.</p>
+      <p>She doesn't flinch. She has trained herself not to.</p>
+      <p>But the question that rises is not about him.</p>
+      <div class="question">If the system keeps erasing the way I lead — why am I still trying to protect it?</div>
+      <p>She is not just trying to climb. She is trying to change the room itself. To build something that ships great work <em>and</em> treats people like people. That doesn't chew through human beings and call it hustle.</p>
+      <p>Every single day, she asks:</p>
+      <div class="question">Is that still possible here? Or am I the only one who still thinks it should be?</div>
+      <span class="break">· · ·</span>
+      <p>4 PM. Sixty decisions deep. The clearest version of her left the building an hour ago.</p>
+      <p>She remembers who she wanted to be. A leader whose values walked into the room before she did. Whose integrity was the strategy — not a liability to manage around.</p>
+      <div class="question">Kahan gayi woh?<br><span style="font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);font-family:'Inter',sans-serif;font-style:normal">Where did she go?</span></div>
+      <span class="break">· · ·</span>
+      <p>The evenings look different for each of them.</p>
+      <p>One comes home to a family she loves and a second shift that has already begun. One comes home to a quiet she chose and protects fiercely. One comes home to a body that needs rest she cannot give it. One opens her laptop — still proving. Still rebuilding.</p>
+      <p>But somewhere in each evening — between the thing she did and the thing she still has to do — she catches her reflection.</p>
+      <p>Not tired. <em>Beyond</em> tired.</p>
+      <p>And underneath it — something sharp. Still alive. Ambition. Unfinished. Impatient.</p>
+      <p>Her body has been keeping score. The sleeplessness. The fog. The hormonal tide nobody at work acknowledges. The nervous system that never gets to rest because rest stopped feeling permitted.</p>
+      <p class="hindi">Thak gayi hai woh — par haari nahi.</p>
+      <p class="hindi-trans">She is exhausted. But she has not given up.</p>
+      <div class="truth">The system was not built for <em>any</em> of them.<br>It was built for someone who is not in this room.</div>
+      <p>Each of them — in her own way, every single day — is trying to lead with full integrity inside a structure that keeps asking her to be less than she is.</p>
+      <p>She is not broken. She is a woman with a fire that the system keeps trying to bureaucratise.</p>
+      <p>And she hasn't had one full day — <em>ek bhi din</em> — to return to herself. To sit with the women living the same story. To remember what she is fighting for. To lead from the place inside her that still knows — with absolute clarity — exactly who she is.</p>
+    </div>
+  </div>
+</div>
+
+<div class="interlude">
+  <p class="interlude-text">The nervous system doesn't lie.<br>Cortisol is not a <em>leadership strategy.</em></p>
+  <p class="interlude-sub">When the body never truly rests, the ability to think clearly, lead with integrity, and simply hear yourself — quietly erodes.</p>
+</div>
+
+<div class="what-section">
+  <div class="what-inner">
+    <p class="section-label">What ROOTed Is</p>
+    <h2 class="what-headline">One full day — designed, held,<br>and protected — entirely for her.</h2>
+    <div class="not-list">
+      <div class="not-item"><p class="not-label">Not this</p><p>A spa day that ignores the mind.</p></div>
+      <div class="not-item"><p class="not-label">Not this</p><p>A workshop that ignores the body.</p></div>
+      <div class="not-item"><p class="not-label">This.</p><p>A complete reset — inside and out.</p></div>
+    </div>
+    <p class="what-body">A room where all five of her sit together. Where no one needs to explain. Where the fire that makes her exceptional gets to breathe — not be managed down. Where ancient wisdom and rigorous leadership frameworks exist in the same space, and she leaves more herself than when she arrived.</p>
+  </div>
+</div>
+
+<div class="schedule-wrap">
+<section class="schedule-section">
+  <p class="section-label">The Day</p>
+  <div class="schedule-item">
+    <div class="time">8:30 AM</div>
+    <div><p class="schedule-title">Arrive. Breathe. Land.</p><p class="schedule-desc">Morning meditation in open green space. No agenda. No performance. Just arrival — and the rare permission to simply be.</p></div>
+  </div>
+  <div class="schedule-item">
+    <div class="time">9:30 AM</div>
+    <div><p class="schedule-title">Lead From The Inside</p><p class="schedule-desc">Facilitated by Rupparna and Aashay Abhyankar. Personal and moral leadership style analysis. What does she stand for — really? Peer reflection, team dynamics, and frameworks that put her values back at the centre of how she leads.</p></div>
+  </div>
+  <div class="schedule-item">
+    <div class="time">12:00 PM</div>
+    <div><p class="schedule-title">Let The Body Restore</p><p class="schedule-desc">Pool yoga. Nadi Parikshan — Ayurvedic pulse reading that sees what she cannot say. Signature oil massage. Steam. Sauna. Treatments that work on the nervous system, not just the muscles.</p></div>
+  </div>
+  <div class="schedule-item">
+    <div class="time">1:00 PM</div>
+    <div><p class="schedule-title">Eat Slowly. Actually Taste It.</p><p class="schedule-desc">Vegetarian, gut-friendly lunch. In community. With nowhere to be and no one to take care of but herself.</p></div>
+  </div>
+  <div class="schedule-item">
+    <div class="time">1:30 PM</div>
+    <div><p class="schedule-title">Go Deeper</p><p class="schedule-desc">Peer coaching circles. Real challenges, honest conversation. What kind of leader does she want to be — and what is actually standing in the way?</p></div>
+  </div>
+  <div class="schedule-item">
+    <div class="time">3:30 PM</div>
+    <div><p class="schedule-title">Soundbath & Integration</p><p class="schedule-desc">Held by Aashay. The day settles into the body. One true promise — not to her team, not to her organisation, not to her family. To herself and the leader she is returning to.</p></div>
+  </div>
+</section>
+</div>
+
+<div class="campaign">
+  <p class="campaign-line">This Women's Day, we are not celebrating her resilience.<br><em>We are restoring it.</em></p>
+  <div class="campaign-divider"></div>
+  <p class="campaign-hindi">Ek din. Sirf apne liye.</p>
+  <p class="campaign-hindi-trans">One day. Just for you.</p>
+</div>
+
+<div class="who-section">
+  <div class="who-inner">
+    <p class="section-label">Who This Is For</p>
+    <h2 class="who-headline">She is senior. She is exceptional.<br>She is competing for the same seat<br>while trying to change the table itself.</h2>
+    <p class="who-body">Directors, VPs, CXOs, and high-performing managers where decision-making is 80% of the job. Women at every point on the spectrum of life — building families, choosing freedom, coming back, starting out, burning bright. What they share is not their choices. It is the fact that they are trying to lead with full integrity inside a system that was never built for them — and haven't had a single day to remember why they started.</p>
+  </div>
+</div>
+
+<section class="closing">
+  <p class="section-label">A Note For The Woman Reading This</p>
+  <h2 class="closing-headline">If something in you recognised itself —<br>this is your sign.</h2>
+  <p>You don't need to be broken to come.</p>
+  <p>You don't need to be in crisis.</p>
+  <p>You just need to be willing to give yourself one day.</p>
+  <p class="closing-sign">You have given enough to everyone else.<br>Come home to yourself.</p>
+  <div class="details-grid">
+    <div class="detail-cell"><p class="detail-label">Date</p><p class="detail-value">March 8, 2026</p></div>
+    <div class="detail-cell"><p class="detail-label">Investment</p><p class="detail-value">₹20,000 per person</p></div>
+    <div class="detail-cell"><p class="detail-label">Group Size</p><p class="detail-value">15–20 women</p></div>
+    <div class="detail-cell"><p class="detail-label">Sponsored By</p><p class="detail-value">Your organisation</p></div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-brand">ROOTed</p>
+  <p>A Siddhashrama &nbsp;×&nbsp; Udayini Experience &nbsp;·&nbsp; March 8, 2026</p>
+</footer>
+
+</body>
+</html>
